@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.route.aigeneration.databinding.FragmentContentCreatorBinding
 import com.route.aigeneration.ui.fragments.idea.IdeaGenerationFragment
+import com.route.aigeneration.ui.fragments.image.ImageGenerationFragment
 
 class ContentCreatorFragment(
     private val replaceFragment: (fragment: Fragment) -> Unit,
