@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/app_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingHorizontal="23dp">
+
+    <include
+        android:id="@+id/downloadBtn"
+        layout="@layout/download_btn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="5dp" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/generatedImage"
+        android:layout_width="match_parent"
+        android:layout_height="332dp"
+        android:layout_marginTop="21dp"
+        android:background="#0D0F10"
+        app:shapeAppearanceOverlay="@style/select_profile_image_corner" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/regenerateTextET"
+        style="@style/sign_in_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/rubik">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:gravity="start"
+            android:inputType="textMultiLine"
+            android:padding="12dp"
+            android:textColor="@color/white" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/regenerateBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:fontFamily="@font/poppins_extra_bold"
+        android:paddingVertical="20dp"
+        android:text="@string/regenerate"
+        android:textSize="24sp"
+        app:cornerRadius="18dp" />
+
+</LinearLayout>

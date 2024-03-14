@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">Creator assistant</string>
+    <string name="login_subscribe"><![CDATA[Login & subscribe]]></string>
+    <string name="try_as_guest">Try as guest</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="welcome">Welcome</string>
+    <string name="login_to_your_account">login to your account</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="sign_in">Sign In</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="get_started">Get started</string>
+    <string name="home">Home</string>
+    <string name="editor">Editor</string>
+    <string name="creator">Creator</string>
+    <string name="settings">Settings</string>
+    <string name="select_profile">Select Profile</string>
+    <string name="content_creator">Content creator</string>
+    <string name="video_editor">Video Editor</string>
+    <string name="music_recommendation">Music recommendation</string>
+    <string name="voice_generation">Voice generation</string>
+    <string name="generate_voice">Generate Voice</string>
+    <string name="write_your_script_here">Write your script here…</string>
+    <string name="send_a_message">send a message</string>
+    <string name="idea_generation">Idea Generation</string>
+    <string name="image_generation">Image generation</string>
+    <string name="what_do_you_want_to_create">What do you want to create?</string>
+    <string name="model">Model</string>
+    <string name="style">Style</string>
+    <string name="generate">Generate</string>
+    <string name="generating_voice">Generating Voice</string>
+    <string name="it_might_take_some_time_as_we_re_generating_a_unique_voice_based_on_your_preferences">
+        It might take some time, as
+        we’re generating a unique voice
+        based on your preferences.
+    </string>
+    <string name="log_in">Log in</string>
+    <string name="google">Google</string>
+    <string name="register">Register</string>
+    <string name="create_new_account">Create new account</string>
+    <string name="welcome_please_enter_your_data">Welcome , please enter your details</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="enter_at_least_8_characters">*Enter at least 8 characters</string>
+    <string name="sign_up">Sign up</string>
+    <string name="enter_your_music_type">Enter your music type</string>
+    <string name="send">Send</string>
+    <string name="creator_assistant">Creator Assistant</string>
+    <string name="empowering_content_creators_and_video_editor_with_ai_magic">\'Empowering Content Creators and Video Editor with AI Magic</string>
+    <string name="regenerate">Regenerate</string>
+    <string name="download_music">Download Music</string>
+    <string name="speech_to_text">Speech to text</string>
+</resources>

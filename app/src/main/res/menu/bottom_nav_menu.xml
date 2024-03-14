@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeMenuItem"
+        android:icon="@drawable/home_icon"
+        android:title="@string/home" />
+
+    <item
+        android:id="@+id/creatorMenuItem"
+        android:icon="@drawable/content_icon"
+        android:title="@string/creator" />
+
+    <item
+        android:id="@+id/editorMenuItem"
+        android:icon="@drawable/edit_icon"
+        android:title="@string/editor" />
+
+    <item
+        android:id="@+id/settingsMenuItem"
+        android:icon="@drawable/settings_icon"
+        android:title="@string/settings" />
+
+</menu>
