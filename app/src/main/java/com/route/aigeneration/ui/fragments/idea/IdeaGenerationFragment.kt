@@ -7,12 +7,13 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isEmpty
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import com.route.aigeneration.utils.Constant
+import com.route.aigeneration.R
 import com.route.aigeneration.adapters.MessagesAdapter
 import com.route.aigeneration.databinding.FragmentIdeaGenerationBinding
 import com.route.aigeneration.models.Messages
+import com.route.aigeneration.utils.Constant
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.FormBody
@@ -39,7 +40,8 @@ class IdeaGenerationFragment(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initRecyclerView()
-        sendNewMessage()
+        sendBtnClick()
+        onMainIdeasBtnClick()
         changeAppBarVisibility.invoke(false)
     }
 
@@ -47,24 +49,33 @@ class IdeaGenerationFragment(
         binding.messagesRecyclerView.adapter = adapter
     }
 
-    private fun sendNewMessage() {
+    private fun inputTextValidation(): Boolean {
         binding.apply {
-            sendBtn.setOnClickListener {
-                if (messageETLayout.isEmpty()) {
-                    messageETLayout.error = "Enter message"
-                } else {
-                    val message = Messages("${messageETLayout.editText!!.text}", Constant.SEND_ID)
-                    messageETLayout.editText!!.setText("")
-                    messages.add(message)
-                    Log.println(Log.WARN, "", message.message)
-
-                    adapter.updateMessages(messages)
-                    sendTextToApi(message.message)
-                }
-            }
-
+            return messageETLayout.editText!!.text.isNotEmpty()
         }
     }
+
+    private fun sendBtnClick() {
+        binding.sendBtn.setOnClickListener {
+            if (inputTextValidation()) {
+                binding.mainIdeasLayout.isVisible = false
+                binding.messagesRecyclerView.isVisible = true
+                sendNewMessage()
+            }
+        }
+    }
+
+    private fun sendNewMessage() {
+        binding.apply {
+            val message = Messages("${messageETLayout.editText!!.text}", Constant.SEND_ID)
+            messages.add(message)
+            //Log.println(Log.WARN, "", message.message)
+            adapter.updateMessages(messages)
+            sendTextToApi(message.message)
+            messageETLayout.editText!!.setText("")
+        }
+    }
+
 
     private fun botNewMessage(text: String) {
         Handler(Looper.getMainLooper()).postDelayed({
@@ -106,5 +117,22 @@ class IdeaGenerationFragment(
                 Log.e("MainActivity", "API call failed : $e")
             }
         })
+    }
+
+    private fun onMainIdeasBtnClick() {
+        binding.apply {
+            contentCreationBtn.setOnClickListener {
+                mainIdeasLayout.isVisible = false
+                messagesRecyclerView.isVisible = true
+                messageETLayout.editText!!.setText(getText(R.string.what_is_content_creation))
+                sendNewMessage()
+            }
+            youtubeIdeaBtn.setOnClickListener {
+                mainIdeasLayout.isVisible = false
+                messagesRecyclerView.isVisible = true
+                messageETLayout.editText!!.setText(getText(R.string.idea_for_youtube_video))
+                sendNewMessage()
+            }
+        }
     }
 }

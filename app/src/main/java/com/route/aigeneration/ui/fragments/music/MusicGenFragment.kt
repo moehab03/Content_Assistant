@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.route.aigeneration.databinding.FragmentMusicGenBinding
 
-class MusicGenFragment(/*private val chooseType: (category: String) -> Unit*/) : Fragment() {
+class MusicGenFragment(private val chooseType: (category: String) -> Unit) : Fragment() {
     private lateinit var binding: FragmentMusicGenBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -19,29 +19,29 @@ class MusicGenFragment(/*private val chooseType: (category: String) -> Unit*/) :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //onTypeClick()
+        onTypeClick()
     }
 
-//    private fun onTypeClick() {
-//        binding.apply {
-//            popMusic.setOnClickListener {
-//                chooseType.invoke(it.tag as String)
-//            }
-//            jazzMusic.setOnClickListener {
-//                chooseType.invoke(it.tag as String)
-//            }
-//            countryMusic.setOnClickListener {
-//                chooseType.invoke(it.tag as String)
-//            }
-//            classicalMusic.setOnClickListener {
-//                chooseType.invoke(it.tag as String)
-//            }
-//            hipHopMusic.setOnClickListener {
-//                chooseType.invoke(it.tag as String)
-//            }
-//            discoMusic.setOnClickListener {
-//                chooseType.invoke(it.tag as String)
-//            }
-//        }
-//    }
+    private fun onTypeClick() {
+        binding.apply {
+            popMusic.setOnClickListener {
+                chooseType.invoke("pop")
+            }
+            discoMusic.setOnClickListener {
+                chooseType.invoke("disco")
+            }
+            jazzMusic.setOnClickListener {
+                chooseType.invoke("jazz")
+            }
+            hipHopMusic.setOnClickListener {
+                chooseType.invoke("hiphop")
+            }
+            classicalMusic.setOnClickListener {
+                chooseType.invoke("classical")
+            }
+            countryMusic.setOnClickListener {
+                chooseType.invoke("country")
+            }
+        }
+    }
 }

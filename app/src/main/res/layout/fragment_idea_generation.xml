@@ -18,18 +18,61 @@
         android:textSize="24sp"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <LinearLayout
+        android:id="@+id/mainIdeasLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/messageLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tittleTV">
+
+        <Button
+            android:id="@+id/contentCreationBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="95dp"
+            android:backgroundTint="@color/gray"
+            android:fontFamily="@font/poppins_bold"
+            android:minWidth="279dp"
+            android:minHeight="69dp"
+            android:paddingHorizontal="52dp"
+            android:paddingVertical="22dp"
+            android:text="@string/what_is_content_creation"
+            android:textSize="13sp" />
+
+        <Button
+            android:id="@+id/youtubeIdeaBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="22dp"
+            android:backgroundTint="@color/gray"
+            android:fontFamily="@font/poppins_bold"
+            android:minWidth="279dp"
+            android:minHeight="69dp"
+            android:paddingHorizontal="52dp"
+            android:paddingVertical="22dp"
+            android:text="@string/idea_for_youtube_video"
+            android:textSize="13sp" />
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/messagesRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="8dp"
-        tools:itemCount="20"
-        tools:listitem="@layout/message_layout"
+        android:visibility="gone"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@id/messageLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tittleTV" />
+        app:layout_constraintTop_toBottomOf="@id/tittleTV"
+        tools:itemCount="20"
+        tools:listitem="@layout/message_layout" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/messageLayout"

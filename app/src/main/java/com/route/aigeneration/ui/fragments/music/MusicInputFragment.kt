@@ -3,6 +3,7 @@ package com.route.aigeneration.ui.fragments.music
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,10 +12,11 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import com.route.aigeneration.R
 import com.route.aigeneration.databinding.FragmentMusicInputBinding
+import com.route.aigeneration.utils.Constant
 
 class MusicInputFragment : Fragment() {
-
     private lateinit var binding: FragmentMusicInputBinding
+    private var musicType: String? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -27,6 +29,12 @@ class MusicInputFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         sendBtnClick()
         downloadMusic()
+        musicType = arguments?.getString(Constant.MUSIC_TYPE)
+        Log.e("onViewCreated","musicType = $musicType")
+        if(musicType!=null){
+            binding.inputET.editText!!.setText(musicType)
+            sendBtnClick()
+        }
     }
 
     override fun onResume() {
