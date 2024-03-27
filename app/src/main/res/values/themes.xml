@@ -46,4 +46,21 @@
         <item name="android:fontFamily">@font/poppins_bold</item>
     </style>
 
+    <style name="CustomNavMenuItemStyle" parent="@style/app_style">
+        <item name="android:textSize">15sp</item>
+        <item name="drawerLayoutCornerSize">0dp</item>
+        <item name="itemTextColor">@color/white</item>
+        <item name="itemVerticalPadding">20dp</item>
+        <item name="itemHorizontalPadding">13dp</item>
+        <item name="itemIconTint">@color/white</item>
+        <item name="itemIconSize">24dp</item>
+        <item name="itemRippleColor">@null</item>
+    </style>
+
+    <style name="fab">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+
 </resources>

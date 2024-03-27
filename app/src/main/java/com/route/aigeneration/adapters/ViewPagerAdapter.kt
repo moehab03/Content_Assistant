@@ -1,12 +1,12 @@
 package com.route.aigeneration.adapters
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.route.aigeneration.ui.fragments.image.GeneratedImageFragment
-import com.route.aigeneration.ui.fragments.music.MusicGenFragment
-import com.route.aigeneration.ui.fragments.music.MusicInputFragment
+import com.route.aigeneration.ui.ai_models.fragments.music.MusicGenFragment
+import com.route.aigeneration.ui.ai_models.fragments.music.MusicInputFragment
 import com.route.aigeneration.utils.Constant
 
 class ViewPagerAdapter(
@@ -17,8 +17,9 @@ class ViewPagerAdapter(
     private val inputFragment = MusicInputFragment()
     val bundle = Bundle()
 
-    private val musicGenFragment = MusicGenFragment {
-        bundle.putString(Constant.MUSIC_TYPE,it)
+    private val musicGenFragment = MusicGenFragment { type ->
+        bundle.putString(Constant.MUSIC_TYPE, type)
+        Log.e("ViewPagerAdapter", "bundle = $type")
         inputFragment.arguments = bundle
         changeView.invoke()
     }

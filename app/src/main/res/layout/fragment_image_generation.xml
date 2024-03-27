@@ -1,52 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/app_style"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
+    <data>
+
+    </data>
+
+    <LinearLayout
+        style="@style/app_style"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="93dp"
-        android:fontFamily="@font/inter_bold"
-        android:gravity="center"
-        android:text="@string/image_generation"
-        android:textSize="24sp" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/generateTextET"
-        style="@style/sign_in_edit_text"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginHorizontal="28dp"
-        android:layout_marginTop="24dp"
-        android:fontFamily="@font/rubik">
-
-        <EditText
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@android:color/transparent"
-            android:gravity="start"
-            android:hint="@string/what_do_you_want_to_create"
-            android:inputType="textMultiLine"
-            android:padding="12dp"
-            android:textColor="@color/white" />
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="93dp"
+            android:fontFamily="@font/inter_bold"
+            android:gravity="center"
+            android:text="@string/image_generation"
+            android:textSize="24sp" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/generateTextET"
+            style="@style/sign_in_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginHorizontal="28dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/rubik">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:gravity="start"
+                android:hint="@string/what_do_you_want_to_create"
+                android:inputType="textMultiLine"
+                android:padding="12dp"
+                android:textColor="@color/white" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
 
-    <Button
-        android:id="@+id/btnSendText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="28dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginBottom="43dp"
-        android:fontFamily="@font/inter_bold"
-        android:paddingVertical="22dp"
-        android:text="@string/generate"
-        android:textSize="20sp"
-        app:cornerRadius="18dp" />
-</LinearLayout>
+        <Button
+            android:id="@+id/btnSendText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="28dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="43dp"
+            android:fontFamily="@font/inter_bold"
+            android:paddingVertical="22dp"
+            android:text="@string/generate"
+            android:textSize="20sp"
+            app:cornerRadius="18dp" />
+    </LinearLayout>
+</layout>

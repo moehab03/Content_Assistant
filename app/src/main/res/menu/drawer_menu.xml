@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/contactUsMenuItem"
+        android:icon="@drawable/contact_us_icon"
+        android:title="@string/contact_us" />
+    <item
+        android:id="@+id/shareMenuItem"
+        android:icon="@drawable/share_icon"
+        android:title="@string/share" />
+    <item
+        android:id="@+id/ratingMenuItem"
+        android:icon="@drawable/rating_icon"
+        android:title="@string/rating" />
+
+</menu>

@@ -1,122 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    style="@style/app_style"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.fragments.music.MusicRecommendationFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/tittleTV"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="93dp"
-        android:fontFamily="@font/inter_bold"
-        android:gravity="center"
-        android:text="@string/idea_generation"
-        android:textSize="24sp"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
 
-    <LinearLayout
-        android:id="@+id/mainIdeasLayout"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_margin="8dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@id/messageLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tittleTV">
-
-        <Button
-            android:id="@+id/contentCreationBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="95dp"
-            android:backgroundTint="@color/gray"
-            android:fontFamily="@font/poppins_bold"
-            android:minWidth="279dp"
-            android:minHeight="69dp"
-            android:paddingHorizontal="52dp"
-            android:paddingVertical="22dp"
-            android:text="@string/what_is_content_creation"
-            android:textSize="13sp" />
-
-        <Button
-            android:id="@+id/youtubeIdeaBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginTop="22dp"
-            android:backgroundTint="@color/gray"
-            android:fontFamily="@font/poppins_bold"
-            android:minWidth="279dp"
-            android:minHeight="69dp"
-            android:paddingHorizontal="52dp"
-            android:paddingVertical="22dp"
-            android:text="@string/idea_for_youtube_video"
-            android:textSize="13sp" />
-    </LinearLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/messagesRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_margin="8dp"
-        android:visibility="gone"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toTopOf="@id/messageLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tittleTV"
-        tools:itemCount="20"
-        tools:listitem="@layout/message_layout" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/messageLayout"
+        style="@style/app_style"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="18dp"
-        android:layout_marginBottom="34dp"
-        android:background="@drawable/idea_et_background"
-        android:padding="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        android:layout_height="match_parent">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/messageETLayout"
-            android:layout_width="0dp"
+        <TextView
+            android:id="@+id/tittleTV"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            app:hintEnabled="false"
-            app:layout_constraintEnd_toStartOf="@id/sendBtn"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_marginHorizontal="93dp"
+            android:fontFamily="@font/inter_bold"
+            android:gravity="center"
+            android:text="@string/idea_generation"
+            android:textSize="24sp"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/gray"
-                android:hint="@string/send_a_message"
-                android:inputType="textMultiLine"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <View
-            android:id="@+id/sendBtn"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginEnd="15dp"
-            android:background="@drawable/send_btn"
-            app:layout_constraintBottom_toBottomOf="@id/messageETLayout"
+        <LinearLayout
+            android:id="@+id/mainIdeasLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="8dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/messageLayout"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/messageETLayout" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tittleTV">
+
+            <Button
+                android:id="@+id/contentCreationBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="95dp"
+                android:backgroundTint="@color/gray"
+                android:fontFamily="@font/poppins_bold"
+                android:minWidth="279dp"
+                android:minHeight="69dp"
+                android:paddingHorizontal="52dp"
+                android:paddingVertical="22dp"
+                android:text="@string/what_is_content_creation"
+                android:textSize="13sp" />
+
+            <Button
+                android:id="@+id/youtubeIdeaBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="22dp"
+                android:backgroundTint="@color/gray"
+                android:fontFamily="@font/poppins_bold"
+                android:minWidth="279dp"
+                android:minHeight="69dp"
+                android:paddingHorizontal="52dp"
+                android:paddingVertical="22dp"
+                android:text="@string/idea_for_youtube_video"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/messagesRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="8dp"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@id/messageLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tittleTV"
+            tools:itemCount="20"
+            tools:listitem="@layout/message_layout" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/messageLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="18dp"
+            android:layout_marginBottom="34dp"
+            android:background="@drawable/idea_et_background"
+            android:padding="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/messageETLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                app:hintEnabled="false"
+                app:layout_constraintEnd_toStartOf="@id/sendBtn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray"
+                    android:hint="@string/send_a_message"
+                    android:inputType="textMultiLine"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <View
+                android:id="@+id/sendBtn"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/send_btn"
+                app:layout_constraintBottom_toBottomOf="@id/messageETLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/messageETLayout" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

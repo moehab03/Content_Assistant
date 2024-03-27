@@ -1,20 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    style="@style/app_style"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.fragments.music.MusicRecommendationFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/titleTv"
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/app_style"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/inter_bold"
-        android:gravity="center"
-        android:text="@string/speech_to_text"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/titleTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_bold"
+            android:gravity="center"
+            android:text="@string/speech_to_text"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/videoCardView"
+            android:layout_width="match_parent"
+            android:layout_height="238dp"
+            android:layout_marginHorizontal="35dp"
+            android:layout_marginTop="44dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleTv"
+            app:strokeWidth="0dp">
+
+            <VideoView
+                android:id="@+id/videoView"
+                android:layout_width="match_parent"
+                android:layout_height="238dp"
+                android:background="#1B2025"
+                android:backgroundTint="#1B2025" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/uploadTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/upload_your_video"
+            android:textColor="#878787"
+            android:textSize="20sp"
+            app:drawableTopCompat="@drawable/folder_upload_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/videoCardView"
+            app:layout_constraintEnd_toEndOf="@+id/videoCardView"
+            app:layout_constraintStart_toStartOf="@+id/videoCardView"
+            app:layout_constraintTop_toTopOf="@+id/videoCardView" />
+
+        <Button
+            android:id="@+id/uploadBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="35dp"
+            android:layout_marginTop="75dp"
+            android:fontFamily="@font/poppins_bold"
+            android:minHeight="70dp"
+            android:text="@string/upload"
+            android:textSize="20sp"
+            app:cornerRadius="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/videoCardView"
+            tools:layout_editor_absoluteX="35dp" />
+
+        <Button
+            android:id="@+id/downloadBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="35dp"
+            android:layout_marginTop="75dp"
+            android:fontFamily="@font/poppins_bold"
+            android:minHeight="70dp"
+            android:text="@string/download"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:cornerRadius="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/videoCardView" />
+
+        <include
+            android:id="@+id/loadingLayout"
+            layout="@layout/loading_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Creator assistant</string>
+    <string name="app_name">Creator Assistant</string>
     <string name="login_subscribe"><![CDATA[Login & subscribe]]></string>
     <string name="try_as_guest">Try as guest</string>
     <string name="title_activity_login">LoginActivity</string>
@@ -55,4 +55,13 @@
     <string name="this_is_a_sample_message_that_will_appear">This is a sample message that will appear</string>
     <string name="what_is_content_creation">What is content creation ?</string>
     <string name="idea_for_youtube_video">Idea for youtube video</string>
+    <string name="profile">Profile</string>
+    <string name="log_out">Log out</string>
+    <string name="contact_us">Contact US</string>
+    <string name="share">Share</string>
+    <string name="rating">Rating</string>
+    <string name="upload_your_video">Upload your video</string>
+    <string name="upload">Upload</string>
+    <string name="download">Download</string>
+    <string name="loading">Loading ... </string>
 </resources>

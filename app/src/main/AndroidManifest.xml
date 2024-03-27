@@ -17,14 +17,23 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".ui.activities.SignUpActivity"
-            android:exported="false"
-            android:parentActivityName=".ui.activities.LoginActivity" />
+            android:name=".ui.ai_models.ModelsActivity"
+            android:exported="false" />
         <activity
-            android:name=".ui.activities.HomeActivity"
+            android:name=".ui.profile.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.settings.SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.auth.SignUpActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.activities.auth.LoginActivity" />
+        <activity
+            android:name=".ui.home.HomeActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.activities.LoginActivity"
+            android:name=".ui.activities.auth.LoginActivity"
             android:exported="false"
             android:label="@string/title_activity_login"
             android:parentActivityName=".ui.activities.StartActivity"

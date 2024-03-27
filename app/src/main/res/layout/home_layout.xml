@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        style="@style/app_style"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                style="@style/app_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <View
+                    android:id="@+id/menuIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="28dp"
+                    android:background="@drawable/menu_icon" />
+
+            </com.google.android.material.appbar.MaterialToolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_gravity="bottom"
+            android:backgroundTint="#1B2025"
+            app:fabAlignmentMode="center"
+            app:fabAnchorMode="cradle"
+            app:fabCradleMargin="6dp"
+            app:fabCradleVerticalOffset="8dp">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottomNavigation"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="start|bottom"
+                app:backgroundTint="@android:color/transparent"
+                app:itemActiveIndicatorStyle="@null"
+                app:itemBackground="@null"
+                app:itemIconSize="22dp"
+                app:itemIconTint="@color/menu_item_color"
+                app:itemPaddingBottom="18dp"
+                app:itemPaddingTop="8dp"
+                app:itemRippleColor="@null"
+                app:itemTextColor="@color/menu_item_color"
+                app:labelVisibilityMode="labeled"
+                app:menu="@menu/bottom_nav_menu" />
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/user_icon"
+            android:tintMode="@color/white"
+            app:backgroundTint="@color/purple"
+            app:layout_anchor="@id/bottomAppBar"
+            app:layout_anchorGravity="top|center"
+            app:shapeAppearanceOverlay="@style/fab" />
+
+        <include
+            android:id="@+id/homeLayout"
+            layout="@layout/main_screen_layout" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

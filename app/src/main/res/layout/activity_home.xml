@@ -1,101 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    style="@style/app_style"
-    tools:context=".ui.activities.HomeActivity">
+    <data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/startScreen"
+    </data>
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/welcome_screen"
-        android:visibility="visible">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="506dp"
-            android:fontFamily="@font/poppins_extra_bold"
-            android:text="@string/creator_assistant"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_extra_bold"
-            android:gravity="center"
-            android:paddingHorizontal="15dp"
-            android:text="@string/empowering_content_creators_and_video_editor_with_ai_magic"
-            android:textSize="16sp"
-            android:layout_marginTop="26dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-        <Button
-            android:id="@+id/getStartedBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#1D1B4A"
-            android:fontFamily="@font/poppins_bold"
-            android:minWidth="290dp"
-            android:paddingHorizontal="80dp"
-            android:paddingVertical="18dp"
-            android:text="@string/get_started"
-            android:layout_marginTop="51dp"
-            android:textSize="22sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/mainScreen"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone">
-
-        <View
-            android:id="@+id/backArrow"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="28dp"
-            android:background="@drawable/back_arrow"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <FrameLayout
-            android:id="@+id/fragmentContainer"
+        <include
+            android:id="@+id/welcomeScreen"
+            layout="@layout/welcome_screen_layout"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@id/bottomBar"
-            app:layout_constraintTop_toBottomOf="@id/backArrow" />
+            android:layout_height="match_parent" />
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomBar"
+        <include
+            android:id="@+id/homeLayout"
+            layout="@layout/home_layout"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            app:itemActiveIndicatorStyle="@null"
-            app:itemIconSize="22dp"
-            app:itemIconTint="@color/menu_item_color"
-            app:itemRippleColor="@null"
-            android:background="@color/light_black"
-            app:itemTextColor="@color/menu_item_color"
-            app:labelVisibilityMode="labeled"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:menu="@menu/bottom_nav_menu" />
+            android:layout_height="match_parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navigationView"
+            style="@style/CustomNavMenuItemStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/side_menu_header"
+            app:menu="@menu/drawer_menu" />
 
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
